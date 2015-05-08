@@ -1,0 +1,14 @@
+[user]
+	name = Stephan Schneider
+	email = stephanschndr@gmail.com
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	p = pull
+	pu = push
+	st = status
+[color]
+	ui = true
+[push]
+	default = simple
