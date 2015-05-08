@@ -1,12 +1,15 @@
 dotfiles
 ========
 
-These are my personal dotfiles.
+## Install
+```sh
+$ cd ~
+$ git clone --recursive git@github.com:zcei/dotfiles.git etc/
+$ cd etc/
+$ bin/make.sh
+$ cp Cobalt2-iterm/cobalt2.zsh-theme oh-my-zsh/themes/
+```
 
-Feel free to use/copy/forge them and modify as you want.
-
-I'm always open for some enhancements, just hit me up!
-
-(please be sure to checkout 'oh-my-zsh' and 'liquidprompt' submodules)
-
-@fheemeyer kann nix
+* Make sure iTerm references our config
+** `Preferences -> Load preferences from a custom folder or URL`
+** ~/etc/iTerm

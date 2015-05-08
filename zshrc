@@ -21,6 +21,7 @@ export VISUAL="subl -w"
 
 # Path to my oh-my-zsh configuration.
 export ZSH=$HOME/etc/oh-my-zsh
+ZSH_THEME="cobalt2"
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
