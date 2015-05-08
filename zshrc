@@ -86,7 +86,7 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby ruby-2.1.3
 
-# Setup zsh-autosuggestions
+# Fish like 'frecent' auto-suggestions
 source $HOME/etc/zsh-autosuggestions/autosuggestions.zsh
 zle-line-init() {
     zle autosuggest-start
@@ -96,3 +96,6 @@ bindkey '^T' autosuggest-toggle
 
 # added by travis gem
 [ -f /Users/stephan/.travis/travis.sh ] && source /Users/stephan/.travis/travis.sh
+
+# Fish like syntax highlighting - NOTE: (2015-05-08) Current version does not work with autosuggestions
+# source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
