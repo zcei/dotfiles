@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=~/etc                            # dotfiles directory
-files="zshrc oh-my-zsh gitconfig"    # list of files/folders to symlink in homedir
+files="zshenv zshrc oh-my-zsh gitconfig"    # list of files/folders to symlink in homedir
 
 
 # change to the dotfiles directory

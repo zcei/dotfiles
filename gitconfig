@@ -7,8 +7,11 @@
 	br = branch
 	p = pull
 	pu = push
+	pwt = push --tags origin
+	publish = push -u origin
+	untrack = rm --cached
 	st = status
 [color]
-	ui = true
+	ui = auto
 [push]
 	default = simple

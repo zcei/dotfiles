@@ -29,9 +29,9 @@ ZSH_THEME="cobalt2"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # Completion: git git-flow osx brew svn npm
-# Further functionality: cp extract (rsync as dependencie)
-# Fancy: colored-man colorize
-plugins=(git git-flow osx colored-man colorize cp rsync extract brew svn npm)
+# Further functionality: cp extract (rsync as dependency)
+# Fancy: colorize
+plugins=(gitfast git-flow osx colorize extract brew npm node bower copyfile copydir web-search z)
 
 
 
@@ -54,12 +54,18 @@ alias m="mongod --dbpath /usr/local/data"
 alias p="postgres -D /usr/local/var/postgres"
 alias mysql="mysql.server start"
 
+# I can't associate `take` with 'create folder and switch to it'
+alias dir="take"
+alias folder="take"
+
 # Common typos
 alias cd..="cd .."
 alias gist="git st"
 
 # Edit this file
 alias zconf="subl ~/etc/zshrc"
+# Edit global git config
+alias gitconf="subl ~/etc/gitconfig"
 
 # Make sum quick server <3
 alias server="python -m SimpleHTTPServer"
@@ -67,6 +73,8 @@ alias server="python -m SimpleHTTPServer"
 # iPhone Simulator App
 alias iphone="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 
+# Don't remove anymore - move it to osx's trash
+alias rm="trash"
 
 # ###########
 # # SCRIPTS #
@@ -74,10 +82,7 @@ alias iphone="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulat
 
 source $ZSH/oh-my-zsh.sh
 
-# # Node Version Manager
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
+# For nvm see zshenv
 # Run in $NVM_DIR to update nvm
 # rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 
@@ -94,8 +99,14 @@ zle-line-init() {
 zle -N zle-line-init
 bindkey '^T' autosuggest-toggle
 
+# Escape stuff like = and & when in url mode e.g. curl
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
 # added by travis gem
 [ -f /Users/stephan/.travis/travis.sh ] && source /Users/stephan/.travis/travis.sh
 
 # Fish like syntax highlighting - NOTE: (2015-05-08) Current version does not work with autosuggestions
 # source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+nvm use default
